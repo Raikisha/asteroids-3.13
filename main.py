@@ -1,7 +1,12 @@
 import pygame
 import constants
+from logger import log_state
+from constants import *
 
 def main():
+    pygame.init()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print("Launching with screen resolution:")
     print(f"Screen width: {constants.SCREEN_WIDTH}")
