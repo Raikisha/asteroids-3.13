@@ -7,10 +7,17 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    #console output before launching the game
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print("Launching with screen resolution:")
     print(f"Screen width: {constants.SCREEN_WIDTH}")
     print(f"Screen height: {constants.SCREEN_HEIGHT}")
+
+    #setting up clock and variables
+    gameclock = pygame.time.Clock()
+    dt = 0
+
+    #main game loop starts here
 
     while True:
         log_state()
@@ -22,6 +29,8 @@ def main():
         screen.fill("black")
 
         pygame.display.flip()
+        dt = (gameclock.tick(60)) /1000
+
 
 
 
