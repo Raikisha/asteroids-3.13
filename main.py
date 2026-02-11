@@ -1,5 +1,6 @@
 import pygame
 import constants
+import player
 from logger import log_state
 from constants import *
 
@@ -13,9 +14,11 @@ def main():
     print(f"Screen width: {constants.SCREEN_WIDTH}")
     print(f"Screen height: {constants.SCREEN_HEIGHT}")
 
-    #setting up clock and variables
+    #setting up clock and variables and player character
     gameclock = pygame.time.Clock()
     dt = 0
+
+    playercharacter = player.Player(constants.SCREEN_WIDTH/2,constants.SCREEN_HEIGHT/2)
 
     #main game loop starts here
 
@@ -30,6 +33,9 @@ def main():
 
         pygame.display.flip()
         dt = (gameclock.tick(60)) /1000
+
+        playercharacter.draw(screen)
+
 
 
 
